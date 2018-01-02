@@ -1,8 +1,10 @@
 {
   "name": "conway-game-of-life-js",
   "version": "0.1.0",
-  "private": true,
+  "main": "src/game-of-life.js",
   "dependencies": {
+    "immutable": "^3.8.2",
+    "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
