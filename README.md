@@ -1,3 +1,9 @@
+# Conway's Game of Life - JavaScript Game Engine
+
+![alt text](docs/gospers-glider-gun.gif "Gospers Glider Gun")
+
+[Conway's Game of Life on Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life?oldformat=true)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
