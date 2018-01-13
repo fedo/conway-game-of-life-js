@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  install:
+  build:
     docker:
       - image: circleci/node:8.9.3
     steps:
@@ -11,12 +11,10 @@ jobs:
       - image: circleci/node:8.9.3
     steps:
       - checkout
-      - run: yarn start
+      - run: yarn install && yarn test
 workflows:
   version: 2
-  install_and_test:
+  build_and_test:
     jobs:
-      - install
+      - build
       - test
-        requires:
-          - install
