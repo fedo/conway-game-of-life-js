@@ -4,6 +4,7 @@
   "main": "src/game-of-life.js",
   "dependencies": {
     "immutable": "^3.8.2",
+    "joi": "^13.1.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -14,5 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "performance-now": "^2.1.0"
   }
 }
