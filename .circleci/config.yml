@@ -11,7 +11,12 @@ jobs:
       - image: circleci/node:8.9.3
     steps:
       - checkout
-      - run: yarn install && yarn test
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - run: chmod +x ./cc-test-reporter
+      - run: ./cc-test-reporter before-build
+      - run: yarn install
+      - run: yarn test --coverage
+      - run: ./cc-test-reporter after-build --exit-code $EXIT_CODE
 workflows:
   version: 2
   build_and_test:
