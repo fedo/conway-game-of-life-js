@@ -2,8 +2,6 @@ import {contains, equals, range, reduce} from 'ramda'
 import {List, Map} from 'immutable'
 import {simpleUniverse, andreasUniverse} from './universes'
 
-const universe = simpleUniverse
-
 const getNeighbours = (position, universe) => {
   const {size, cells} = universe
   const [width, height] = size
@@ -47,6 +45,8 @@ const evolve = (universe) => {
     }, List()).toArray()
   }
 }
+
+const universe = andreasUniverse
 
 export {
   evolve,
