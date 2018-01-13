@@ -1,12 +1,8 @@
-import {range, reduce, equals} from 'ramda'
+import {contains, equals, range, reduce} from 'ramda'
 import {List, Map} from 'immutable'
+import {simpleUniverse, andreasUniverse} from './universes'
 
-const universe = {
-  size: [10, 10],
-  cells: [
-    [0, 0], [0, 1], [1, 1], [4, 4], [6, 6], [9, 9]
-  ]
-}
+const universe = simpleUniverse
 
 const getNeighbours = (position, universe) => {
   const {size, cells} = universe
@@ -36,14 +32,17 @@ const counterMap$ = (universe) => {
   }, Map())
 }
 
+const isAlive = (position, cells) => contains(position, cells)
+
 const evolve = (universe) => {
   const {size, cells} = universe
   const $counterMap = counterMap$(universe)
   return {
     size,
     cells: $counterMap.reduce((acc, counter, $position) => {
-      return (counter > 1 && counter < 3)
-        ? acc.push($position.toArray())
+      const position = $position.toArray()
+      return (counter === 3 || (isAlive(position, cells) && counter === 2))
+        ? acc.push(position)
         : acc
     }, List()).toArray()
   }
