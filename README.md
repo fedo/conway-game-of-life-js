@@ -4,6 +4,8 @@
 
 [Conway's Game of Life on Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life?oldformat=true)
 
+[![CircleCI](https://circleci.com/gh/fedo/conway-game-of-life-js.svg?style=svg)](https://circleci.com/gh/fedo/conway-game-of-life-js)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
