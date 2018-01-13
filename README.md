@@ -1,10 +1,9 @@
-# Conway's Game of Life - JavaScript Game Engine
+# Conway's Game of Life - JavaScript Game Engine &middot; [![CircleCI](https://circleci.com/gh/fedo/conway-game-of-life-js.svg?style=svg)](https://circleci.com/gh/fedo/conway-game-of-life-js) [![Test Coverage](https://api.codeclimate.com/v1/badges/10d7f56674ffc4d44c22/test_coverage)](https://codeclimate.com/github/fedo/conway-game-of-life-js/test_coverage)
 
 ![alt text](docs/gospers-glider-gun.gif "Gospers Glider Gun")
 
 [Conway's Game of Life on Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life?oldformat=true)
 
-[![CircleCI](https://circleci.com/gh/fedo/conway-game-of-life-js.svg?style=svg)](https://circleci.com/gh/fedo/conway-game-of-life-js)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
