@@ -1,6 +1,7 @@
 import {contains, equals, range, reduce} from 'ramda'
 import {List, Map} from 'immutable'
-import {simpleUniverse, andreasUniverse} from './universes'
+import {simpleUniverse, andreasUniverse} from '../universes'
+import {sortCells} from "../game-of-life-api"
 
 const getNeighbours = (position, universe) => {
   const {size, cells} = universe
@@ -48,9 +49,37 @@ const evolve = (universe) => {
 
 const universe = andreasUniverse
 
+const createFromCells = (size, cells) => ({size, cells})
+
+const createRandom = (size, percentage = 0.5) => {
+  const [width, height] = size
+  let cells = []
+  for(let x = 0; x < width; x++){
+    for(let y = 0; y < height; y++){
+      if(Math.random() > percentage){
+        cells.push([x, y])
+      }
+    }
+  }
+  return {
+    size,
+    cells
+  }
+}
+
+const view = (customUniverse) => ({
+  ...customUniverse,
+  cells: sortCells(customUniverse.cells)
+})
+
 export {
+  createFromCells,
+  createRandom,
   evolve,
+  view,
+
   counterMap$,
   getNeighbours,
   universe
 }
+
