@@ -1,4 +1,4 @@
-import R, {contains} from 'ramda'
+import {ascend, contains, prop, sortWith} from 'ramda'
 import * as golImmutable from './engines/game-of-life-immutable'
 import * as golJsfiddle from './engines/game-of-life-jsfiddle-vqBE4'
 
@@ -26,9 +26,9 @@ const printUniverse = (message, universe) => {
   return universe
 }
 
-const sortCells = R.sortWith([
-  R.ascend(R.prop(0)),
-  R.ascend(R.prop(1))
+const sortCells = sortWith([
+  ascend(prop(0)),
+  ascend(prop(1))
 ]);
 
 class GameOfLife {
@@ -39,11 +39,16 @@ class GameOfLife {
     }
     this.engine = e
   }
-  create = (size, {cells, random}) => random
+  create(size, {cells, random}) {
+    return random
     ? this.engine.createRandom(size)
     : this.engine.createFromCells(size, cells)
-  evolve = (customUniverse) => this.engine.evolve(customUniverse)
-  view = (customUniverse) => this.engine.view(customUniverse)
+  }
+  evolve(customUniverse) {
+    return this.engine.evolve(customUniverse)}
+  view(customUniverse) {
+    return this.engine.view(customUniverse)
+  }
 }
 
 export default GameOfLife

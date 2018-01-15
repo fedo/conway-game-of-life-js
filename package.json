@@ -1,6 +1,6 @@
 {
   "name": "conway-game-of-life-js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "src/game-of-life/game-of-life.js",
   "dependencies": {
     "immutable": "^3.8.2",

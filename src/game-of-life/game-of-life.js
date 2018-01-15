@@ -12,5 +12,3 @@ export {
   universe,
   GameOfLife
 }
-
-export default GameOfLife

@@ -1,4 +1,4 @@
-import {contains, equals, range, reduce} from 'ramda'
+import {contains, equals, merge, range, reduce} from 'ramda'
 import {List, Map} from 'immutable'
 import {simpleUniverse, andreasUniverse} from '../universes'
 import {sortCells} from "../game-of-life-api"
@@ -67,10 +67,10 @@ const createRandom = (size, percentage = 0.5) => {
   }
 }
 
-const view = (customUniverse) => ({
-  ...customUniverse,
-  cells: sortCells(customUniverse.cells)
-})
+const view = (customUniverse) => merge(
+  customUniverse,
+  {cells: sortCells(customUniverse.cells)}
+)
 
 export {
   createFromCells,
